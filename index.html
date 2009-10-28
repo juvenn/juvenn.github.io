@@ -1,19 +1,24 @@
-<!Doctype html 
-  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+---
+layout: default
+title: Juvenn Woo
+---
 
-<!-- 
-  Copyright (c) Juvenn Woo
-  http://twitter.com/juvenn
--->
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<head profile="http://www.w3.org/2005/10/profile">
-  <title>Hi, This is Juvenn</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<body>
-  <h1>Hello, GitHub! This is Juvenn</h1>
-</body>
-</html>
-
+<div id="home">
+  <h1>Writing</h1>
+  <ul class="posts">
+    {% for post in site.posts limit:5 %}
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  <h1>Coding</h1>
+  <ul class="posts">
+    <li>
+    <a href="http://github.com/juvenn/hackpad/">Hackpad:</a> Simple blog powered by 
+    <a href="http://www.sinatrarb.com">Sinatra</a>, 
+    <a href="http://sequel.rubyforge.org">Sequel</a>, 
+    <a href="http://defunkt.github.com/mustache">Mustache</a>
+    </li>
+  </ul>
+</div>
+  
