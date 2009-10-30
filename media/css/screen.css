@@ -57,7 +57,7 @@ a:visited {
 }
 
 a:hover {
-  text-decoration: underline;
+  border-bottom: 2px solid;
 }
 
 table {
@@ -112,7 +112,7 @@ ul.posts {
   }
 
   .site .title a:hover {
-    color: #fff;
+    color: #ccc;
   }
 
   .site .title a.extra {
@@ -122,7 +122,7 @@ ul.posts {
   }
 
   .site .title a.extra:hover {
-    color: #fff;
+    color: #ccc;
   }
 
   .site .meta {
