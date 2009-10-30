@@ -1,14 +1,3 @@
-/*****************************************************************************
- * 
- * I like the color schema of http://10to1.be, it has great readablity, so I
- * adapted (or copied) it here, to make my readers enjoyable.
- * The layout is adapted from the default http://tom.preston-werner.com.
- *
- * Until I get permission from original authors, you may not use it freely, 
- * maybe me too.
- *
- *****************************************************************************/
-
 /*****************************************************************************/
 /*
 /* Common
@@ -27,8 +16,8 @@ html, body {
 }
 
 body {
-  background-color: #222;
-  color: #ccc;
+  background-color: white;
+  color: #000;
   font: 13.34px "Droid Sans", "Lucida Grande", helvetica, clean, verdana, sans-serif;
   *font-size: small;
   text-align: center;
@@ -48,17 +37,18 @@ p {
 }
 
 a {
-  color: #a8ff60;
+  color: #08439a;
   text-decoration: none;
 }
 
 a:visited {
-  color: #74b229;
+  color: #08439a;
 }
 
 a:hover {
   text-decoration: underline;
 }
+
 
 table {
   font-size: inherit;
@@ -81,7 +71,7 @@ ul.posts {
   }
 
   ul.posts span {
-    color: #666;
+    color: #aaa;
     font-family: Monaco, Inconsolata, "Droid Sans Mono", monospace, "Courier New";
     font-size: 80%;
   }
@@ -101,38 +91,38 @@ ul.posts {
 }
 
 .title {
-  color: #666;
+  color: #999;
   font-weight: bold;
   margin-bottom: 2em;
 }
 
   .site .title a {
-    color: #666;
+    color: #999;
     text-decoration: none;
   }
 
   .site .title a:hover {
-    color: #fff;
+    color: black;
   }
 
   .site .title a.extra {
-    color: #666;
+    color: #999;
     text-decoration: none;
     margin-left: 1em;
   }
 
   .site .title a.extra:hover {
-    color: #fff;
+    color: black;
   }
 
   .site .meta {
-    color: #666;
+    color: #aaa;
   }
 
   .site .footer {
     font-size: 80%;
     color: #666;
-    border-top: 4px solid #333;
+    border-top: 4px solid #eee;
     margin-top: 2em;
     overflow: hidden;
   }
@@ -143,7 +133,7 @@ ul.posts {
     }
 
       .site .footer .contact a {
-        color: #999;
+        color: #8085C1;
       }
 
     .site .footer .rss {
@@ -169,12 +159,9 @@ ul.posts {
   /* standard */
 
   #post pre {
-    border: 1px solid #111;
-    padding: 1em .4em;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    background-color: #1a1a1a;
+    border: 1px solid #ddd;
+    background-color: #eef;
+    padding: 0 .4em;
   }
 
   #post ul,
@@ -183,22 +170,25 @@ ul.posts {
   }
 
   #post code {
-    color: #999;
-    font-size: 80%;
+    background-color: #eef;
+    font-size: 95%;
     padding: 0 .2em;
   }
 
     #post pre code {
-      display: block;
+      border: none;
     }
 
   /* terminal */
 
   #post pre.terminal {
-    color: #999;
+    border: 1px solid black;
+    background-color: #333;
+    color: white;
   }
 
   #post pre.terminal code {
+    background-color: #333;
   }
 
 #related {
