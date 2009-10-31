@@ -65,9 +65,18 @@ table {
   font: 100%;
 }
 
-input {
+input,
+input.submit {
   background-color: #1a1a1a;
   border: 1px solid #111;
+}
+
+textarea {
+  background-color: #1a1a1a;
+  border: 1px solid #111;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
 }
 /*****************************************************************************/
 /*
