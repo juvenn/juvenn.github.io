@@ -96,11 +96,15 @@ ul.posts {
     line-height: 1.75em;
   }
 
-  ul.posts span {
+  span.timestamp {
     color: #666;
     font-family: Monaco, Inconsolata, "Droid Sans Mono", monospace, "Courier New";
     font-size: 80%;
   }
+  span.timestamp:after {
+    content: " \00BB  ";
+  }
+
 
 /*****************************************************************************/
 /*
