@@ -29,23 +29,13 @@ html, body {
 body {
   background-color: #222;
   color: #ccc;
-  font: 13.34px "Droid Sans", "Lucida Grande", helvetica, clean, verdana, sans-serif;
+  font: 13.34px "Droid Sans", "Lucida Grande", helvetica, sans-serif;
   *font-size: small;
   text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #fff;
-  font-size: 100%;
-}
-
-h1 {
-  font-size: 140%;
-  margin-bottom: 1em;
-}
-
-h2 {
-  font-size: 120%;
+  margin: 1em 0;
 }
 
 p {
