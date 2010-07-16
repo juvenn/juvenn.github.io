@@ -8,16 +8,15 @@ a:hover { border-bottom: 2px solid; }
 #nav a { font-size: 1.2em; margin-right: 1em; }
 #headline .tagline { font-size: .6em; margin-left: .6em; }
 .site { font-size: 1.08em; width: 40em; margin: auto; line-height: 1.5em; }
-.site .footer { font-size: .9em; margin-top: 4em; overflow: hidden; }
-.site .footer .contact { float: left; margin-right: 3em; }
-.site .footer .contact a { color: #999; }
-.site .footer .rec { margin-top: 1.1em; margin-right: -.2em; float: right; }
+.site .footer { font-size: .9em; overflow: hidden; margin-top: 4em; }
+.site .footer .rec { padding: 1em 0; border-bottom: 2px solid #ccc; }
 .site .footer .rec img { border: 0; width: 77px; height: 64px; }
+.site .footer .copyright { padding: 1em 0; }
 
-ul.posts { margin-bottom: 2em; }
-ul.posts li { list-style-type: none; line-height: 1.75em; }
-span.timestamp { color: #666; font-family: Monaco, monospace; font-size: 80%; }
-span.timestamp:after { content: " \00BB  "; }
+.posts { margin-bottom: 2em; }
+.posts li { list-style-type: none; line-height: 1.75em; }
+.posts .timestamp { color: #666; font-family: Monaco, monospace; font-size: 80%; }
+.posts .timestamp:after { content: " » "; }
 
 #post pre {
   color: #ddd;
@@ -29,7 +28,7 @@ span.timestamp:after { content: " \00BB  "; }
 }
 
 #post .meta:before { content: "⌚ "; }
-#post p:last-child:after { content:" ¶"; }
+#post p:last-child:after { content:" ♨"; }
 #post ul, #post ol { margin-left: 1.25em; }
 #post code { font-size: .9em; padding: 0 .4em; }
 #post pre code { display: block; }
