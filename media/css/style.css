@@ -33,7 +33,8 @@ a:hover { border-bottom: 2px solid; }
 #post code { font-size: .9em; padding: 0 .4em; }
 #post pre code { display: block; }
 /* terminal code */
-#post pre.terminal { }
+#post pre.terminal {}
+#post pre.terminal samp {}
 #post pre.terminal code {}
 
 #related { margin-top: 2em; }
