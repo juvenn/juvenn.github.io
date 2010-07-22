@@ -10,7 +10,7 @@ a:hover { border-bottom: 2px solid; }
 .site { font-size: 1.08em; width: 40em; margin: auto; line-height: 1.5em; }
 .site .footer { font-size: .9em; overflow: hidden; margin-top: 4em; }
 .site .footer .rec { padding: 1em 0; border-bottom: 2px solid #ccc; }
-.site .footer .rec img { border: 0; width: 77px; height: 64px; }
+.site .footer .rec img { border: 0; width: 125px; height: 125px; }
 .site .footer .copyright { padding: 1em 0; }
 
 .posts { margin-bottom: 2em; }
