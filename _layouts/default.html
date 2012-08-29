@@ -2,14 +2,18 @@
 <html>
 <head>
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>Juvenn Woo | {{ page.title }}</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+   <title>{{ page.title }} - walkingcloud.org</title>
    <meta name="author" content="Juvenn Woo" />
-   <link rel="shortcut icon" href="/favicon.ico" />
+   <link rel="shortcut icon" href="/media/images/favicon.ico" />
    <link rel="alternate" href="http://feeds.feedburner.com/hacking-juvenn" type="application/atom+xml" title="Burned Feed" />
 
+   <link rel="stylesheet"
+   href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css" type="text/css" />
    <!-- syntax highlighting CSS -->
+   <link rel="stylesheet" href="/media/css/yui3reset.css" type="text/css" />
    <link rel="stylesheet" href="/media/css/syntax.css" type="text/css" />
-   <link rel="stylesheet" href="/media/css/basic.css" type="text/css" />
+   <link rel="stylesheet" href="/media/css/960.css" type="text/css" />
    <link rel="stylesheet" href="/media/css/style.css" type="text/css" />
 
    <!-- 
@@ -19,35 +23,78 @@
 </head>
 <body>
 
-<div class="site">
-  <div id="nav">
-    <h2 id="headline">
-      <span class="author">Juvenn Woo</span>
-      <span class="tagline">the journeyman.</span>
-    </h2>
-    <a class="extra" href="/">home</a>
-    <a rel="archives" class="extra" href="/archive">archive</a>
-    <a class="extra" title="Burned Feed" href="http://feeds.feedburner.com/hacking-juvenn">feed</a>
-    <a rel="me" class="extra" title="twitter/juvenn" href="http://twitter.com/juvenn">@juvenn</a>
-  </div>
-  
-  {{ content }}
-  
-  <div class="footer">
-    <div class="rec">
-      Juvenn prefers
-      <a title="Basecamp - effective project collaboration"
-       	href="http://basecamphq.com/?referrer=JUVENNWOO">Basecamp</a>
-      for project collaboration.
-      <a title="Basecamp - effective project collaboration"
-	href="http://basecamphq.com/?referrer=JUVENNWOO">Will you</a>? [Ad]
+  <div id="hd" class="container">
+    <div class="nav column">
+      <nav>
+      <a href="/">home</a>
+      &bull;
+      <a rel="archives" href="/archive">archive</a>
+      &bull;
+      <a title="Burned Feed" href="http://feeds.feedburner.com/hacking-juvenn">feed</a>
+      &bull;
+      <a rel="me" title="twitter/juvenn" href="http://twitter.com/juvenn">@juvenn</a>
+      </nav>
+      <h2 id="headline" style="color:#666;font-size:26px;">
+	<span class="author">☁  walkingcloud.org</span>
+	<span class="tagline">telling stories</span>
+      </h2>
     </div>
-    <p class="copyright">&copy; 2009 - 2010 Juvenn Woo. Drop email at:
-    <a href="#">machese+gh@gmail.com</a>.
-    </p>
+  </div>
+  <div id="bd" class="container">
+    <div class="column">
+      {{ content }}
+    </div>
+  </div>
+  <div id="ft" class="container">
+    <div class="column">
+      <div class="rec">
+	Juvenn prefers
+	<a title="Basecamp - effective project collaboration"
+	  href="http://basecamphq.com/?referrer=JUVENNWOO">Basecamp</a>
+	for project collaboration.
+	<a title="Basecamp - effective project collaboration"
+	  href="http://basecamphq.com/?referrer=JUVENNWOO">Will you</a>? [Ad]
+      </div>
+      <p class="copyright">&copy; 2009 - 2010 Juvenn Woo. Drop email at:
+      <a href="#">machese+gh@gmail.com</a>.
+      </p>
+    </div>
+  </div>
+
+
+
+  <!--
+
+
+  <div class="top">
+    <div>&nbsp;</div>
+    <div class="container_12" style="box-shadow: 0 3px
+      5px 6px #ccc;">
+      <div class="grid_8 push_2 top"
+	style="height:160px;">
+	<div id="nav">
+	</div>
+      </div>
+    </div>
+  </div>
+
+<div class="container_12" >
+
+<div class="grid_8 push_2">
+<div class="site" style="background:#fff;">
+  
+  
+</div>
+
+GitHub Ribbon
+<a href="http://github.com/juvenn"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+
+  <div class="footer">
   </div>
 </div>
-<a href="http://github.com/juvenn"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+</div>
+
+--!>
 
 <script type="text/javascript">
 
