@@ -1,30 +1,15 @@
 ---
 layout: default
-title: by juvenn woo
+title: ☁
 ---
 
 <div id="home">
   <h2>Writing</h2>
   <ul class="posts">
-    {% for post in site.posts limit:10 %}
+    {% for post in site.posts %}
       <li><span class="timestamp">{{ post.date | date_to_string }}</span><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
   
-  <h2>Coding</h2>
-  <ul class="posts">
-    <li>
-    <span class="timestamp">2010</span> 
-    <a href="/2010/03/31/monitoring-superfeedr/">Monica/Superfeedr</a>: 
-    PubSub and PubSubHubbub monitoring built on EventMachine, Sinatra,
-    with MongoDB.
-    </li>
-    <li>
-    <span class="timestamp">2008-2010</span>
-    <a href="http://github.com/juvenn/microupdater">Microupdater</a>:
-    PubSubHubbub-based, scalable news aggregator, powered by Google
-    AppEngine.
-    </li>
-  </ul>
 </div>
   
