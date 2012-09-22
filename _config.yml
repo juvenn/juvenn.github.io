@@ -1,4 +1,6 @@
 # permalink: pretty
 permalink: /:year/:month/:title
-markdown: rdiscount
+
+# redcarpet rdiscount kramdown maruku
+markdown: kramdown
 pygments: true

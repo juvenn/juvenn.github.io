@@ -1,36 +1,55 @@
-body {font-size:13px/1.231;color:#666;background:#eef;}
+@import url(http://fonts.googleapis.com/css?family=IM+Fell+DW+Pica|Gentium+Book+Basic:400,700,400italic,700italic);
+
+body {font-family:"IM Fell DW Pica",serif;font-size:100%;color:#333;}
 /* Desktop */
-@media all and (min-width: 600px) {.column{width:560px;margin:0 auto;}}
+@media all and (min-width: 600px)  {
+  .column{width:560px;margin:0 auto;}
+  #headline {float:left;}
+  #about {float:right;}
+  nav {clear:left;}
+}
 /* Mobile */
-@media all and (max-width: 600px) {.column{margin:0 1em;}}
+@media all and (max-width: 600px) {
+  .column{margin:0;}
+  nav {padding-top:1em;}
+}
 
 h1,h2,h3,h4,h5,h6 {font-weight:bold}
-h1,h2,h3 {margin:1em 0;}
+h1,h2,h3 {padding:1em 0;}
 h1 {font-size:138.5%;}
 h2 {font-size:123.1%;}
 h3 {font-size:108%;}
 
-a {color:#369;text-decoration:none;}
-a:visited {color:#936;}
+a {color:#66c;text-decoration:none;}
+a:visited {color:#669;}
 a:hover {text-decoration:underline;}
 
-nav {float:right;color:#666;}
-#headline {clear:both;padding:0;}
-.column {font-size:1.08em;line-height:1.5em;padding:1.2em 0;}
-#bd {background:#fff;min-height:560px;box-shadow:0 1px 4px 2px #ddd;}
+.column {line-height:1.5em;padding:1em;}
+#hd h1 {padding-top:0;padding-bottom:.5em;}
+#about {width:260px;padding:.5em;background:#f9f9f9;border:1px solid #f0f0f0;border-width:1px 0;}
+#bd h1 {color:#903;}
+#bd .column {min-height:600px;border:solid #efefef;border-width:1px 0;}
+
+sup {font-size:.8em;vertical-align:super;}
+sup:before {content:"[";}
+sup:after {content:"]";}
+blockquote {font-style:italic;border-left:5px solid #669;padding:.5em 1em;background:#f6f6f6;margin:2em 0;}
+ol {list-style:decimal;}
+ul {list-style:square;}
+li {margin-left:1.5em;}
+em {font-style:italic;}
+strong {font-weight:bold;}
 
 .posts { margin-bottom: 2em; }
-.posts li {list-style-type:none;line-height:1.75em; }
-.posts .timestamp:after { content: " » "; }
+.posts ul {list-style-type:none;}
+.posts .timestamp:after { content: "»"; }
 .posts .timestamp {font-family:Monaco,monospace;font-size:80%;}
 
+.footnotes {margin-top:2em;}
 #post {border-bottom:1px #eee solid;padding-bottom:1em;}
-#post p {padding:.5em 0;}
+#post p {font-family:"Gentium Book Basic",serif;padding:.5em 0;}
 #post .meta:before { content: "⌚ "; }
-#post p:last-child:after { content:" ♨"; }
-#post ul, #post ol {margin-left:1.25em;}
 #post pre {color:#fff;padding:.8em .4em;border-radius:5px;background:#666;margin:.25em 0;}
 #post code {font-size:.9em;padding:0 .4em;}
 #post pre code { display: block; }
 
-p.quote {text-align:center;color:#ccc;}
