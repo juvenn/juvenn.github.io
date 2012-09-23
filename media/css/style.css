@@ -45,11 +45,11 @@ strong {font-weight:bold;}
 .posts .timestamp:after { content: "»"; }
 .posts .timestamp {font-family:Monaco,monospace;font-size:80%;}
 
-.footnotes {margin-top:2em;}
-#post {border-bottom:1px #eee solid;padding-bottom:1em;}
 #post p {font-family:"Gentium Book Basic",serif;padding:.5em 0;}
 #post .meta:before { content: "⌚ "; }
 #post pre {color:#fff;padding:.8em .4em;border-radius:5px;background:#666;margin:.25em 0;}
 #post code {font-size:.9em;padding:0 .4em;}
 #post pre code { display: block; }
 
+.footnotes {margin-top:1em;}
+.footnotes:before {content:"-&-";color:#ccc;display:block;text-align:center;}
