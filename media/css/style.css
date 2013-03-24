@@ -1,6 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Kreon);
 
-body {font-family:Kreon;font-size:16px;color:#666;width:460px;line-height:1.5em;margin:0 auto;}
+body {font-family:Kreon;font-size:16px;color:#666;width:460px;margin:0 auto;}
 
 h1,h2,h3,h4,h5,h6 {font-weight:bold;}
 h1,h2,h3 {padding-top:1em;}
@@ -14,11 +14,12 @@ strong {font-weight:bold;}
 a {color:#666;text-decoration:none;border-bottom:1px solid #999;}
 a:hover {color:#222;border-bottom:1px solid #333;}
 
-header {margin:2em auto; border-bottom:1px solid #ffe; }
+
+header {margin:1em auto; border-bottom:1px solid #ffe; }
 footer {margin:2em auto; border-top:1px solid #ddd;}
 section {margin:0 auto 2em auto;}
 section.thanks {font-style:italic;}
-p {padding:0;margin:1em 0;}
+p {padding:0;margin:1em 0;line-height:1.8em;}
 
 sup {font-size:.8em;vertical-align:super;}
 sup:before {content:"[";}
@@ -27,6 +28,7 @@ blockquote {font-style:italic;text-align:right;border-left:5px solid #a23;paddin
 ol {list-style:decimal;padding-left:2em;}
 ul {list-style:square;padding-left:2em;}
 
+.post time {color:#999;}
 .post pre {color:#fff;padding:.8em .4em;border-radius:5px;background:#666;margin:.25em 0;}
 .post code {font-size:.8em;}
 .post pre code { display: block; }

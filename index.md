@@ -7,15 +7,16 @@ title: About
 
 <section>
 
-<p>I'm Juvenn Woo, I make software. I walk, and I'm telling
-stories here, in the context of China.</p>
+<p>I'm Juvenn Woo, I make web software. I walk, and I'm telling stories
+here, in the context of China.</p>
 
 <p>I was a programmer at <a
 href="http://charls.ccer.edu.cn">CHARLS</a>.</p>
 
-<p>I have been programming on Linux since 2008, and have modest working
-experiences in Python, Ruby, PHP, at the same time I get interested in
-functional programming. I am the maintainer of <a
+<p>I have been programming on Linux since 2008, and have built web
+software in Python, Ruby, and PHP. My most recent interests are getting
+into functional programming, mostly in Erlang and Clojure. I am the
+maintainer of <a
 href="https://github.com/juvenn/mustache.vim">mustache.vim</a>.</p>
 
 </section>
@@ -45,10 +46,9 @@ would ride bycicle for an hour to visit the library at <a
 href="http://www.nim.nankai.edu.cn/nim_e/index.htm">Chern Institute of
 Mathematics</a>, though I ended up reading stories of mathematicians
 rather than studying mathematics there. I taught myself programming with
-papers and pencils.</p>
+papers and pencils. And I don't have PhD or Master degrees.</p>
 
-<p>I don't have PhD or Master degrees, and am I irrational and
-emotional.</p>
+<p>I try to make things simple and beautiful.</p>
 
 </section>
 
@@ -56,9 +56,9 @@ emotional.</p>
 <ol>
 
 <li id="fn:1"><a href="http://amzn.com/0060855029">River Town</a> by
-Peter Hessler, a New York Times Notable Book, has described a town very
-close to mine. It has <a
-href="http://www.amazon.cn/dp/B0074E7CVU">Chinese version</a> as well.<a
+Peter Hessler, a New York Times Notable Book, has described what kind of
+that town would be like. It has been translated into <a
+href="http://www.amazon.cn/dp/B0074E7CVU">Chinese</a> as well.<a
 rel="reference" href="#fnref:1">&#8617;</a></li>
 
 </ol>

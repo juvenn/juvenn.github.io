@@ -4,11 +4,11 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Juvenn Woo</title>
- <link href="http://juvenn.github.com/atom.xml" rel="self"/>
- <link href="http://juvenn.github.com/"/>
+ <title>walkingcloud.org</title>
+ <link href="http://walkingcloud.org/atom.xml" rel="self"/>
+ <link href="http://walkingcloud.org/" />
  <updated>{{ site.time | date_to_xmlschema }}</updated>
- <id>http://juvenn.github.com/</id>
+ <id>http://walkingcloud.org/</id>
  <author>
    <name>Juvenn Woo</name>
    <email>machese@gmail.com</email>
@@ -17,9 +17,9 @@ layout: nil
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://juvenn.github.com{{ post.url }}"/>
+   <link href="http://walkingcloud.org{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
-   <id>http://juvenn.github.com{{ post.id }}</id>
+   <id>http://walkingcloud.org{{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
  </entry>
  {% endfor %}
