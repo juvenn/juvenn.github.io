@@ -28,13 +28,13 @@ blockquote {font-style:italic;text-align:right;border-left:5px solid #a23;paddin
 ol {list-style:decimal;padding-left:2em;}
 ul {list-style:square;padding-left:2em;}
 
-.post time {color:#999;}
+.post time {color:#999;font-size:.9em;}
 .post pre {color:#fff;padding:.8em .4em;border-radius:5px;background:#666;margin:.25em 0;}
 .post code {font-size:.8em;}
 .post pre code { display: block; }
 
 .footnotes:before {content:"-&-";color:#ccc;display:block;text-align:center;}
-.footnotes {margin-top:1em;}
+.footnotes {font-size: .9em; margin-top:1em;}
 
 .posts li {padding:.5em 0;}
 .posts time:after { content: " »"; }
