@@ -1,22 +1,23 @@
 ---
 layout: default
-title: About
+title: hi
 ---
 
-<h1>About</h1>
+<h1>hi</h1>
 
 <section>
 
-<p>I'm Juvenn Woo, I make web software. I walk, and I'm telling stories
-here, in the context of China.</p>
+<p>I'm Juvenn Woo, I make web software. I walk, and I'm <a
+href="/archive.html">telling stories</a> here, in the context of
+China.</p>
 
 <p>I was programmer at <a
 href="http://charls.ccer.edu.cn">CHARLS</a>.</p>
 
 <p>I have been programming on Linux since 2008, and have built deployed
-web software in Python, Ruby, and PHP. My most recent interests are
-getting into functional programming, mostly in Erlang and Clojure. I am
-the maintainer of <a
+web software in Python, Ruby, and PHP. My recent interests are getting
+into functional programming, mostly in Erlang and Clojure. I am the
+maintainer of <a
 href="https://github.com/juvenn/mustache.vim">mustache.vim</a>.</p>
 
 </section>
