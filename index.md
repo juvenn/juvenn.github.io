@@ -7,7 +7,7 @@ title: hi
 
 <section>
 
-<p>I'm Juvenn Woo, I make web software. I walk, and I'm <a
+<p>I'm Juvenn Woo, I program software. I walk, and I'm <a
 href="/archive.html">telling stories</a> here, in the context of
 China.</p>
 
@@ -15,9 +15,9 @@ China.</p>
 href="http://charls.ccer.edu.cn">CHARLS</a>.</p>
 
 <p>I have been programming on Linux since 2008, and have built deployed
-web software in Python, Ruby, and PHP. My recent interests are getting
-into functional programming, mostly in Erlang and Clojure. I am the
-maintainer of <a
+software in Python, Ruby, and PHP. My recent interests are getting into
+functional programming, mostly in Erlang and Clojure. I like working on
+open source software, and am the author of <a
 href="https://github.com/juvenn/mustache.vim">mustache.vim</a>.</p>
 
 </section>
@@ -45,9 +45,11 @@ href="http://amzn.com/0387905189"><em>Algebra</em></a>. Each week I
 would ride bycicle for an hour to visit the library at <a
 href="http://www.nim.nankai.edu.cn/nim_e/index.htm">Chern Institute of
 Mathematics</a>, though I ended up reading stories of mathematicians
-rather than studying mathematics there. I have taught myself programming
-with papers and pencils, and liked playing soccer and tennis. I have got
-a BA in Economics.</p>
+rather than studying mathematics there. Without a computer, I had taught
+myself programming with papers and pencils. I liked playing soccer and
+tennis.</p>
+
+<p>I have got a BA in Economics.</p>
 
 </section>
 
