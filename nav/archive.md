@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Archive
+title: archive
 ---
 
 <section id="archive">
-  <h1>Archive</h1>
+  <h1>archive</h1>
   <ul class="posts">
     {% for post in site.posts %}
     <li><time datetime="{{post.date}}">{{ post.date | date_to_string }}</time>

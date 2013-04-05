@@ -8,7 +8,7 @@ title: hi
 <section>
 
 <p>I'm Juvenn Woo, I program software. I walk, and I'm <a
-href="/archive.html">telling stories</a> here, in the context of
+href="/nav/archive.html" title="archive">telling stories</a> here, in the context of
 China.</p>
 
 <p>I was programmer at <a
