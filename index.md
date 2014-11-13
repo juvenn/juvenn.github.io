@@ -65,11 +65,3 @@ rel="reference" href="#fnref:1">&#8617;</a></li>
 </ol>
 </section>
 
-<section class="thanks">
-
-Design inspired by <a href="http://sstephenson.us">Sam Stephenson</a>.
-Open font <a href="http://www.google.com/fonts/specimen/Kreon">Kreon</a>
-by Julia Petretta.
-
-</section>
-
