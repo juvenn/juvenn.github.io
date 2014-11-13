@@ -3,4 +3,4 @@ permalink: /:year/:month/:title
 
 # redcarpet rdiscount kramdown maruku
 markdown: kramdown
-pygments: true
+highlighter: pygments
