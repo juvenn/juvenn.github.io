@@ -1,6 +1,7 @@
 ---
 layout: post
-title: Developing fingerprint driver for libfprint - a journeyman's guide
+title: Developing fingerprint driver for libfprint
+date: 2013-06-01
 ---
 
 [Libfprint](http://www.reactivated.net/fprint/wiki/Libfprint) is a

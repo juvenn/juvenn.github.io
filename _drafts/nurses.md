@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A Story of Nurses
+date: 2012-09-03
 ---
 
 Nurses were busy coming and going.
