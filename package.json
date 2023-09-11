@@ -11,7 +11,7 @@
         "format": "prettier --write ."
     },
     "devDependencies": {
-        "@sveltejs/adapter-auto": "^2.1.0",
+        "@sveltejs/adapter-static": "^2.0.3",
         "@sveltejs/kit": "^1.22.3",
         "@tailwindcss/typography": "^0.5.7",
         "@vcarl/remark-headings": "^0.0.1",
