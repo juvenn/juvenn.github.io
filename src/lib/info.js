@@ -19,4 +19,5 @@ export const twitter = 'juvenn'
 export const linkedin = ''
 export const instagram = ''
 
+export const rssUrl = `${website}/rss.xml`
 export const archivePath = '/archive'
