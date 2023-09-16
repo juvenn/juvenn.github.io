@@ -1,34 +1,32 @@
 <script>
-  import { website, name, bio, avatar } from '$lib/info.js'
-  import ToC from '$lib/components/ToC.svelte'
-  import ArrowLeftIcon from '$lib/components/ArrowLeftIcon.svelte'
-  import SocialLinks from '$lib/components/SocialLinks.svelte'
-  import { afterNavigate } from '$app/navigation'
-  import PostDate from '$lib/components/PostDate.svelte'
+  import { website, name, bio, avatar, archivePath } from "$lib/info.js";
+  import ToC from "$lib/components/ToC.svelte";
+  import ArrowLeftIcon from "$lib/components/ArrowLeftIcon.svelte";
+  import SocialLinks from "$lib/components/SocialLinks.svelte";
+  import { afterNavigate } from "$app/navigation";
+  import PostDate from "$lib/components/PostDate.svelte";
 
   /** @type {import('./$types').PageData} */
-  export let data
+  export let data;
 
   // generated open-graph image for sharing on social media.
   // see https://og-image.vercel.app/ for more options.
   const ogImage = `https://og-image.vercel.app/**${encodeURIComponent(
     data.post.title
-  )}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`
-
-  const url = `${website}/${data.post.slug}`
+  )}**?theme=light&md=1&fontSize=100px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fhyper-color-logo.svg`;
 
   // if we came from /posts, we will use history to go back to preserve
   // posts pagination
-  let canGoBack = false
+  let canGoBack = false;
   afterNavigate(({ from }) => {
-    if (from && from.url.pathname.startsWith('/posts')) {
-      canGoBack = true
+    if (from && from.url.pathname.startsWith(archivePath)) {
+      canGoBack = true;
     }
-  })
+  });
 
   function goBack() {
     if (canGoBack) {
-      history.back()
+      history.back();
     }
   }
 </script>
@@ -39,7 +37,7 @@
   <meta name="author" content={name} />
 
   <!-- Facebook Meta Tags -->
-  <meta property="og:url" content={url} />
+  <meta property="og:url" content={data.post.url} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={data.post.title} />
   <meta property="og:description" content={data.post.preview.text} />
@@ -48,7 +46,7 @@
   <!-- Twitter Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta property="twitter:domain" content={website} />
-  <meta property="twitter:url" content={url} />
+  <meta property="twitter:url" content={data.post.url} />
   <meta name="twitter:title" content={data.post.title} />
   <meta name="twitter:description" content={data.post.preview.text} />
   <meta name="twitter:image" content={ogImage} />
@@ -58,9 +56,9 @@
   <div class="hidden lg:block pt-8">
     <div class="sticky top-0 w-full flex justify-end pt-11 pr-8">
       <svelte:element
-        this={canGoBack ? 'button' : 'a'}
+        this={canGoBack ? "button" : "a"}
         class="items-center justify-center hidden w-10 h-10 mb-8 transition bg-white rounded-full shadow-md -top-1 -left-16 lg:flex group shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:focus-visible:ring-2 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
-        href={canGoBack ? undefined : '/posts'}
+        href={canGoBack ? undefined : archivePath}
         aria-label="Go back to posts"
         on:click={goBack}
         on:keydown={goBack}
@@ -80,11 +78,16 @@
         >
           {data.post.title}
         </h1>
-        <PostDate class="text-sm sm:text-base" post={data.post} decorate collapsed />
+        <PostDate
+          class="text-sm sm:text-base"
+          post={data.post}
+          decorate
+          collapsed
+        />
       </header>
 
       <!-- render the post -->
-      <div class="prose dark:prose-invert ">
+      <div class="prose dark:prose-invert">
         <svelte:component this={data.component} />
       </div>
     </article>
@@ -114,7 +117,10 @@
 
   <!-- table of contents -->
   <div class="hidden xl:block pt-10">
-    <aside class="sticky hidden w-48 ml-8 xl:block top-8" aria-label="Table of Contents">
+    <aside
+      class="sticky hidden w-48 ml-8 xl:block top-8"
+      aria-label="Table of Contents"
+    >
       <ToC post={data.post} />
     </aside>
   </div>

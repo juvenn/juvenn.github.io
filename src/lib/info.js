@@ -18,3 +18,5 @@ export const github = 'juvenn'
 export const twitter = 'juvenn'
 export const linkedin = ''
 export const instagram = ''
+
+export const archivePath = '/archive'

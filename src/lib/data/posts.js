@@ -2,6 +2,7 @@ import { browser } from '$app/environment'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time/lib/reading-time.js'
+import { website } from "$lib/info.js";
 
 // we require some server-side APIs to parse all metadata
 if (browser) {
@@ -14,14 +15,19 @@ export const posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: 
     const html = parse(post.default.render().html)
     const preview = post.metadata.preview ? parse(post.metadata.preview) : html.querySelector('p')
 
+    const slug = filepath
+      .replace(/(\/index)?\.md/, '')
+      .split('/')
+      .pop()
+
     return {
       ...post.metadata,
 
       // generate the slug from the file path
-      slug: filepath
-        .replace(/(\/index)?\.md/, '')
-        .split('/')
-        .pop(),
+      slug: slug,
+
+      path: `/post/${slug}`,
+      url: `${website}/post/${slug}`,
 
       // whether or not this file is `my-post.md` or `my-post/index.md`
       // (needed to do correct dynamic import in posts/[slug].svelte)
@@ -30,10 +36,10 @@ export const posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: 
       // format date as yyyy-MM-dd
       date: post.metadata.date
         ? format(
-            // offset by timezone so that the date is correct
-            addTimezoneOffset(new Date(post.metadata.date)),
-            'yyyy-MM-dd'
-          )
+          // offset by timezone so that the date is correct
+          addTimezoneOffset(new Date(post.metadata.date)),
+          'yyyy-MM-dd'
+        )
         : undefined,
 
       preview: {

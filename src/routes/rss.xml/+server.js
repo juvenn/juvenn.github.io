@@ -9,7 +9,6 @@ export const prerender = true
 
 // update this to something more appropriate for your website
 const websiteDescription = `${name}'s blog`
-const postsUrl = `${website}/posts`
 
 /**
  * @type {import('@sveltejs/kit').RequestHandler}
@@ -27,19 +26,19 @@ export async function GET({ setHeaders }) {
         <description>${websiteDescription}</description>
         <atom:link href="${website}/rss.xml" rel="self" type="application/rss+xml" />
         ${posts
-          .map(
-            (post) =>
-              `
+      .map(
+        (post) =>
+          `
               <item>
-                <guid>${postsUrl}/${post.slug}</guid>
+                <guid>${post.url}</guid>
                 <title>${post.title}</title>
                 <description>${post.preview.text}</description>
-                <link>${postsUrl}/${post.slug}</link>
+                <link>${post.url}</link>
                 <pubDate>${new Date(post.date).toUTCString()}</pubDate>
             </item>
           `
-          )
-          .join('')}
+      )
+      .join('')}
       </channel>
     </rss>`
 
