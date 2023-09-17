@@ -32,7 +32,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.post.title} - {name}</title>
+  <title>{data.post.title} | {name}</title>
   <meta name="description" content={data.post.preview.text} />
   <meta name="author" content={name} />
 
