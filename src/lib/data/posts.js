@@ -11,47 +11,7 @@ if (browser) {
 
 // Get all posts and add metadata
 export const posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: true }))
-  .map(([filepath, post]) => {
-    const html = parse(post.default.render().html)
-    const preview = post.metadata.preview ? parse(post.metadata.preview) : html.querySelector('p')
-
-    const slug = filepath
-      .replace(/(\/index)?\.md/, '')
-      .split('/')
-      .pop()
-
-    return {
-      ...post.metadata,
-
-      // generate the slug from the file path
-      slug: slug,
-
-      path: `/post/${slug}`,
-      url: `${website}/post/${slug}`,
-
-      // whether or not this file is `my-post.md` or `my-post/index.md`
-      // (needed to do correct dynamic import in posts/[slug].svelte)
-      isIndexFile: filepath.endsWith('/index.md'),
-
-      // format date as yyyy-MM-dd
-      date: post.metadata.date
-        ? format(
-          // offset by timezone so that the date is correct
-          addTimezoneOffset(new Date(post.metadata.date)),
-          'yyyy-MM-dd'
-        )
-        : undefined,
-
-      preview: {
-        html: preview.toString(),
-        // text-only preview (i.e no html elements), used for SEO
-        text: preview.structuredText ?? preview.toString()
-      },
-
-      // get estimated reading time for the post
-      readingTime: readingTime(html.structuredText).text
-    }
-  })
+  .map(metaAnnotator({ withPreview: true, urlPrefix: "/post" }))
   // sort by date
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   // add references to the next/previous post
@@ -60,6 +20,55 @@ export const posts = Object.entries(import.meta.glob('/posts/**/*.md', { eager: 
     next: allPosts[index - 1],
     previous: allPosts[index + 1]
   }))
+
+export function metaAnnotator({ withPreview = false, urlPrefix = "/" }) {
+  return ([filepath, entry]) => {
+    const slug = filepath
+      .replace(/(\/index)?\.md/, '')
+      .split('/')
+      .pop()
+
+    let meta = {
+      ...entry.metadata,
+
+      // generate the slug from the file path
+      slug: slug,
+
+      path: `${urlPrefix}/${slug}`,
+      url: `${website}${urlPrefix}/${slug}`,
+
+      // whether or not this file is `my-post.md` or `my-post/index.md`
+      // (needed to do correct dynamic import in posts/[slug].svelte)
+      isIndexFile: filepath.endsWith('/index.md'),
+
+      // format date as yyyy-MM-dd
+      date: formatDate(entry.metadata.date)
+    }
+    if (!withPreview) {
+      return meta
+    }
+
+    const html = parse(entry.default.render().html)
+    const preview = entry.metadata.preview ? parse(entry.metadata.preview) : html.querySelector('p')
+
+    meta.readingTime = readingTime(html.structuredText).text
+    meta.preview = {
+      html: preview.toString(),
+      // text-only preview (i.e no html elements), used for SEO
+      text: preview.structuredText ?? preview.toString()
+    }
+    return meta
+  }
+}
+
+function formatDate(date) {
+  if (date) {
+    // offset by timezone so that the date is correct
+    const xdate = addTimezoneOffset(new Date(date))
+    return format(xdate, 'yyyy-MM-dd')
+  }
+  return format(new Date(), 'yyyy-MM-dd')
+}
 
 function addTimezoneOffset(date) {
   const offsetInMilliseconds = new Date().getTimezoneOffset() * 60 * 1000

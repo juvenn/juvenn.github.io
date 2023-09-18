@@ -12,12 +12,12 @@ export async function load({ params }) {
   // see https://github.com/rollup/plugins/tree/master/packages/dynamic-import-vars#limitations
 
   // see vitejs/vite#11824
-  const modules = import.meta.glob('../../../pages/*.md')
-  const module = modules[`../../../pages/${params.slug}.md`]
-  if (!module) {
+  const pages = import.meta.glob('../../../pages/*.md')
+  const page = pages[`../../../pages/${params.slug}.md`]
+  if (!page) {
     throw error(404, "Not found")
   }
-  const component = await module()
+  const component = await page()
 
   return {
     page: { ...component.metadata, slug: params.slug },

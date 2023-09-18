@@ -3,6 +3,7 @@
 // It is OK to delete this file if you'd rather not bother with it.
 
 import { posts } from '$lib/data/posts'
+import { pages } from '$lib/data/pages'
 import { website } from '$lib/info'
 
 export const prerender = true
@@ -32,6 +33,22 @@ export async function GET({ setHeaders }) {
         <loc>${website}</loc>
         <priority>1.0</priority>
       </url>
+
+      ${pages
+      .map(
+        (page) => `<url>
+            <loc>${page.url}</loc>
+            <lastmod
+              >${page.date
+            ? new Date(page.date).toISOString()
+            : new Date().toISOString()
+          }</lastmod
+            >
+            <changefreq>monthly</changefreq>
+            <priority>1.0</priority>
+          </url>`
+      )
+      .join('')}
 
       ${posts
       .map(

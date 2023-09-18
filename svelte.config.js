@@ -5,25 +5,25 @@ import adapter from '@sveltejs/adapter-static'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-    extensions: ['.svelte', ...mdsvexConfig.extensions],
+  extensions: ['.svelte', ...mdsvexConfig.extensions],
 
-    // Consult https://github.com/sveltejs/svelte-preprocess
-    // for more information about preprocessors
-    preprocess: [
-        preprocess({
-            postcss: true
-        }),
-        mdsvex(mdsvexConfig)
-    ],
+  // Consult https://github.com/sveltejs/svelte-preprocess
+  // for more information about preprocessors
+  preprocess: [
+    preprocess({
+      postcss: true
+    }),
+    mdsvex(mdsvexConfig)
+  ],
 
-    kit: {
-        adapter: adapter(),
+  kit: {
+    adapter: adapter(),
 
-        // remove this if you don't want prerendering
-        prerender: {
-            entries: ['*', '/sitemap.xml', '/rss.xml']
-        }
+    // remove this if you don't want prerendering
+    prerender: {
+      entries: ['*', '/books', '/sitemap.xml', '/rss.xml']
     }
+  }
 }
 
 export default config

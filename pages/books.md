@@ -1,7 +1,10 @@
 
 ---
-title: Reading List
+title: Books and Readings
+date: 2023-09-17
 ---
+
+A collection of books and readings that I've enjoyed, or influenced my mind.
 
 ### Academic
 
