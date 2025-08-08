@@ -6,8 +6,14 @@
   import { afterNavigate } from "$app/navigation";
   import PostDate from "$lib/components/PostDate.svelte";
 
-  /** @type {import('./$types').PageData} */
-  export let data;
+  
+  /**
+   * @typedef {Object} Props
+   * @property {import('./$types').PageData} data
+   */
+
+  /** @type {Props} */
+  let { data } = $props();
 
   // generated open-graph image for sharing on social media.
   // see https://og-image.vercel.app/ for more options.
@@ -17,7 +23,7 @@
 
   // if we came from /posts, we will use history to go back to preserve
   // posts pagination
-  let canGoBack = false;
+  let canGoBack = $state(false);
   afterNavigate(({ from }) => {
     if (from && from.url.pathname.startsWith(archivePath)) {
       canGoBack = true;
@@ -60,8 +66,8 @@
         class="items-center justify-center hidden w-10 h-10 mb-8 transition bg-white rounded-full shadow-md -top-1 -left-16 lg:flex group shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0 dark:focus-visible:ring-2 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20"
         href={canGoBack ? undefined : archivePath}
         aria-label="Go back to posts"
-        on:click={goBack}
-        on:keydown={goBack}
+        onclick={goBack}
+        onkeydown={goBack}
       >
         <ArrowLeftIcon
           class="w-4 h-4 transition stroke-zinc-500 group-hover:stroke-zinc-700 dark:stroke-zinc-500 dark:group-hover:stroke-zinc-400"
@@ -88,7 +94,7 @@
 
       <!-- render the post -->
       <div class="prose dark:prose-invert">
-        <svelte:component this={data.component} />
+        <data.component />
       </div>
     </article>
 

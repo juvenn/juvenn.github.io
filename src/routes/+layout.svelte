@@ -4,11 +4,18 @@
   import { MoonIcon, SunIcon } from "heroicons-svelte/24/solid";
   import { browser } from "$app/environment";
   import { name } from "$lib/info";
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
+  /**
+   * @typedef {Object} Props
+   * @property {import('svelte').Snippet} [children]
+   */
 
-  let isDarkMode = browser
+  /** @type {Props} */
+  let { children } = $props();
+
+  let isDarkMode = $state(browser
     ? Boolean(document.documentElement.classList.contains("dark"))
-    : true;
+    : true);
 
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add("[&_*]:!transition-none");
@@ -36,7 +43,7 @@
         aria-label="Toggle Dark Mode"
         aria-checked={isDarkMode}
         class="w-5 h-5 sm:h-8 sm:w-8 sm:p-1"
-        on:click={() => {
+        onclick={() => {
           isDarkMode = !isDarkMode;
           localStorage.setItem("isDarkMode", isDarkMode.toString());
 
@@ -55,9 +62,9 @@
     </header>
     <main
       class="flex flex-col flex-grow w-full mx-auto"
-      class:max-w-2xl={!$page.data.layout?.fullWidth}
+      class:max-w-2xl={!page.data.layout?.fullWidth}
     >
-      <slot />
+      {@render children?.()}
     </main>
   </div>
 </div>

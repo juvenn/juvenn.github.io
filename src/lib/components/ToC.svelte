@@ -3,17 +3,17 @@
   import { onMount } from 'svelte'
   import Card from './Card.svelte'
 
-  export let post
+  let { post, children } = $props();
 
   let elements = []
-  let headings = post.headings
+  let headings = $state(post.headings)
 
   onMount(() => {
     updateHeadings()
     setActiveHeading()
   })
 
-  let activeHeading = headings[0]
+  let activeHeading = $state(headings[0])
   let scrollY
 
   function updateHeadings() {
@@ -46,25 +46,27 @@
   }
 </script>
 
-<svelte:window on:scroll={setActiveHeading} />
+<svelte:window onscroll={setActiveHeading} />
 
 <Card>
-  <slot slot="description">
-    <ul class="flex flex-col gap-2">
-      {#each headings as heading}
-        <li
-          class="pl-2 transition-colors border-teal-500 heading text-zinc-500 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100"
-          class:active={activeHeading === heading}
-          style={`--depth: ${
-            // consider h1 and h2 at the same depth, as h1 will only be used for page title
-            Math.max(0, heading.depth - 1)
-          }`}
-        >
-          <a href={`#${heading.id}`}>{heading.value}</a>
-        </li>
-      {/each}
-    </ul>
-  </slot>
+  {#snippet description()}
+    {#if children}{@render children()}{:else}
+      <ul class="flex flex-col gap-2">
+        {#each headings as heading}
+          <li
+            class="pl-2 transition-colors border-teal-500 heading text-zinc-500 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100"
+            class:active={activeHeading === heading}
+            style={`--depth: ${
+              // consider h1 and h2 at the same depth, as h1 will only be used for page title
+              Math.max(0, heading.depth - 1)
+            }`}
+          >
+            <a href={`#${heading.id}`}>{heading.value}</a>
+          </li>
+        {/each}
+      </ul>
+    {/if}
+  {/snippet}
 </Card>
 
 <style lang="postcss">

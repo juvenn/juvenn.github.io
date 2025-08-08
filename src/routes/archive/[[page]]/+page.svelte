@@ -4,11 +4,17 @@
   import ArrowRightIcon from "$lib/components/ArrowRightIcon.svelte";
   import PostsList from "$lib/components/PostsList.svelte";
 
-  /** @type {import('./$types').PageData} */
-  export let data;
+  
+  /**
+   * @typedef {Object} Props
+   * @property {import('./$types').PageData} data
+   */
 
-  $: isFirstPage = data.page === 1;
-  $: hasNextPage = data.posts[data.posts.length - 1]?.previous;
+  /** @type {Props} */
+  let { data } = $props();
+
+  let isFirstPage = $derived(data.page === 1);
+  let hasNextPage = $derived(data.posts[data.posts.length - 1]?.previous);
 </script>
 
 <svelte:head>
@@ -18,7 +24,7 @@
 <div class="flex flex-col flex-grow">
   <header class="pt-4">
     <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Archive</h1>
-    <p class="mt-6" />
+    <p class="mt-6"></p>
   </header>
 
   <div class="mt-16 sm:mt-20">
@@ -33,7 +39,7 @@
         Previous
       </a>
     {:else}
-      <div />
+      <div></div>
     {/if}
 
     {#if hasNextPage}

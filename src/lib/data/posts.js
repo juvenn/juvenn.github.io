@@ -2,6 +2,7 @@ import { browser } from '$app/environment'
 import { format } from 'date-fns'
 import { parse } from 'node-html-parser'
 import readingTime from 'reading-time/lib/reading-time.js'
+import { render } from 'svelte/server'
 import { website } from "$lib/info.js";
 
 // we require some server-side APIs to parse all metadata
@@ -48,7 +49,7 @@ export function metaAnnotator({ withPreview = false, urlPrefix = "/" }) {
       return meta
     }
 
-    const html = parse(entry.default.render().html)
+    const html = parse(render(entry.default).html)
     const preview = entry.metadata.preview ? parse(entry.metadata.preview) : html.querySelector('p')
 
     meta.readingTime = readingTime(html.structuredText).text

@@ -2,8 +2,15 @@
     import PostPreview from "$lib/components/PostPreview.svelte";
     import PostDate from "$lib/components/PostDate.svelte";
 
-    export let posts;
-    export let showPreview = true;
+    /**
+     * @typedef {Object} Props
+     * @property {any} posts
+     * @property {boolean} [showPreview]
+     * @property {import('svelte').Snippet} [children]
+     */
+
+    /** @type {Props} */
+    let { posts, showPreview = true, children } = $props();
 </script>
 
 <div
@@ -15,9 +22,11 @@
 
             <div class="col-span-4 md:col-span-3">
                 <PostPreview {post} {showPreview}>
-                    <slot slot="eyebrow">
-                        <PostDate class="md:hidden" {post} collapsed decorate />
-                    </slot>
+                    {#snippet eyebrow()}
+                                        {#if children}{@render children()}{:else}
+                            <PostDate class="md:hidden" {post} collapsed decorate />
+                        {/if}
+                                    {/snippet}
                 </PostPreview>
             </div>
         </article>
