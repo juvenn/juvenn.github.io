@@ -15,7 +15,7 @@ export async function load({ params }) {
   const pages = import.meta.glob('../../../pages/*.md')
   const page = pages[`../../../pages/${params.slug}.md`]
   if (!page) {
-    throw error(404, "Not found")
+    error(404, "Not found");
   }
   const component = await page()
 
