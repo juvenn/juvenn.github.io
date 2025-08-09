@@ -1,7 +1,5 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
+@import 'tailwindcss';
 @import './prism.css';
-@import 'tailwindcss/utilities';
 
 @layer base {
   body {
