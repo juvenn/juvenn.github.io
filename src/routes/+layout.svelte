@@ -23,6 +23,17 @@
       document.documentElement.classList.remove("[&_*]:!transition-none");
     }, 0);
   }
+
+  function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    localStorage.setItem("isDarkMode", isDarkMode.toString());
+    disableTransitionsTemporarily();
+    if (isDarkMode) {
+      document.querySelector("html").classList.add("dark");
+    } else {
+      document.querySelector("html").classList.remove("dark");
+    }
+  }
 </script>
 
 <div class="flex flex-col min-h-screen">
@@ -43,18 +54,7 @@
         aria-label="Toggle Dark Mode"
         aria-checked={isDarkMode}
         class="w-5 h-5 sm:h-8 sm:w-8 sm:p-1"
-        onclick={() => {
-          isDarkMode = !isDarkMode;
-          localStorage.setItem("isDarkMode", isDarkMode.toString());
-
-          disableTransitionsTemporarily();
-
-          if (isDarkMode) {
-            document.querySelector("html").classList.add("dark");
-          } else {
-            document.querySelector("html").classList.remove("dark");
-          }
-        }}
+        onclick={toggleDarkMode}
       >
         <MoonIcon class="hidden text-zinc-500 dark:block" />
         <SunIcon class="block text-zinc-400 dark:hidden" />
