@@ -18,7 +18,7 @@
         "@vcarl/remark-headings": "^0.0.1",
         "autoprefixer": "^10.4.7",
         "cssnano": "^5.0.15",
-        "eslint": "^7.32.0",
+        "eslint": "^9.39.1",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-svelte": "^2.45.1",
         "mdsvex": "^0.12.6",
